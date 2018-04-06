@@ -1,0 +1,32 @@
+<aside class="sidebar fixed">
+  <div class="brand-logo">
+    <div id="logo"></div>
+    Talent Hired
+  </div>
+  <div class="user-logged-in">
+    <div class="content">
+      <div class="user-name">Welcome <span class="text-muted f9">admin</span></div>
+      <div class="user-email">user@name.com</div>
+      <div class="user-actions">
+        <a class="m-r-5" href="">settings</a> <a href="">logout</a>
+      </div>
+    </div>
+  </div>
+  <ul class="menu-links" ng-cloak>
+    <a menu-link href="#/dashboard" icon="md md-blur-on">Dashboard</a>
+    <a menu-link href="#" name="Clients" icon="md md-camera">Clients</a>
+    <a menu-link href="#/apps/crud" name="Candidates" icon="md md-input">Candidates</a>
+    <a menu-link href="#" name="Vendors" icon="md md-photo">Vendors</a>
+    <a menu-link href="#" name="Jobs" icon="md md-list">Jobs</a>
+  </ul>
+  <div ng-controller="UploadController">
+    <div ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+        accept="image/*,application/pdf,application/msword" ngf-pattern="'image/*,application/pdf,application/msword'">Drop Resume(s) here</div>
+    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+    Files:
+    <ul>
+        <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
+    </ul>
+    Progress:<pre>{{log}}</pre>
+  </div>
+</aside>
